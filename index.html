@@ -1,20 +1,52 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
 
-    <title>Template</title>
-  </head>
-  <body>
-    <main>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bxslider/dist/jquery.bxslider.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    </main>
+  <title>Codi-n-shop</title>
+</head>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+<body>
+  <div class="container">
+    <div class="slider">
+      <div>
+        <img src="img/31959565_2053047888300089_6408062291912163328_n.jpg" alt="toto">
+      </div>
+      <div>
+        <img src="img/31959565_2053047888300089_6408062291912163328_n.jpg" alt="toto">
+      </div>
+      <div>
+        <img src="img/31959565_2053047888300089_6408062291912163328_n.jpg" alt="toto">
+      </div>
+    </div>
+    <div class="row">
+      <header>
+        <!--Navigation bar-->
+        <div id="nav-placeholder"></div>
+        <!--end of Navigation bar-->
+      </header>
+    </div>
+
+  </div>
+  <main>
+
+
+  </main>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="node_modules/bxslider/dist/jquery.bxslider.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
+</body>
+
 </html>

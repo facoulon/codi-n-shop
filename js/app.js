@@ -1,3 +1,11 @@
 $(document).ready(function(){
-  console.log('hello world');
+  $(".slider").bxSlider({
+    auto: true,
+    tickerHover: true,
+    
+  });
+
+
+
+
 })
