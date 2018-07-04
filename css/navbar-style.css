@@ -14,5 +14,5 @@ form.form-inline input.form-control {
 div#header div#center div#search-nav form.form-inline button {
   border-radius: 0 5px 5px 0;
   display: block;
-  background-color: blue;
+  background-color: lightgrey;
 }
