@@ -2,9 +2,13 @@
   width: 100%;
   overflow: hidden;
 }
+
+body div.container div.row div.bx-wrapper {
+  margin-bottom: 0px;
+}
 /* ======================================NAVBAR ============================== */
 #nav-top-codi {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 #nav-top-codi .column{
