@@ -1,0 +1,18 @@
+body {
+  background-color: red;
+}
+
+/* body div.container
+header  */
+div#header div#center div#search-nav
+form.form-inline input.form-control {
+  border-radius: 5px 0 0 5px;
+  display: block;
+  margin-right: 0 !important;
+}
+
+div#header div#center div#search-nav form.form-inline button {
+  border-radius: 0 5px 5px 0;
+  display: block;
+  background-color: blue;
+}
