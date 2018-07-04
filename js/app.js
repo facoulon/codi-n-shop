@@ -19,7 +19,11 @@ marginTop +='px';
 $(".sliderHead img").css('margin-top', marginTop);
 },300);
 
-
+$(".filter").click(function(event) {
+$("#filterMenu").attr('class', 'column col-6 col-sm-5 col-lg-3');
+$("#menuArticle").attr('class', 'column col-6 col-sm-7 col-lg-9');
+$(".filter").attr('class', 'filter offset-6 offset-sm-5 offset-lg-3');
+});
 
 
 
