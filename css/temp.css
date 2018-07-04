@@ -1,0 +1,25 @@
+#product-area div.column{
+  padding: 2em;
+  background: lightgrey;
+}
+
+#product-area div.column img{
+  width: 50%;
+  height: auto;
+}
+
+#product-area div.column div.presentation{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+#cart-area div.col img{
+  max-height: 100px;
+  height: auto;
+}
+
+#cart-area div.cart-item{
+  display: flex;
+  align-items: baseline;
+}

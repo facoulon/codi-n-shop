@@ -1,18 +1,28 @@
-body {
-  background-color: red;
+
+div#header div#center div#search-nav {
+  display: flex;
+  align-items: center;
 }
 
-/* body div.container
-header  */
-div#header div#center div#search-nav
-form.form-inline input.form-control {
+div#header div#center div#search-nav form.form-inline {
+  width: 100%;
+}
+
+div#header div#center div#search-nav form.form-inline input.form-control {
+  margin-top: : auto;
   border-radius: 5px 0 0 5px;
   display: block;
   margin-right: 0 !important;
+  border-color: grey;
 }
 
 div#header div#center div#search-nav form.form-inline button {
   border-radius: 0 5px 5px 0;
   display: block;
   background-color: lightgrey;
+  border-color: grey;
+}
+
+div#header div#center div#search-nav form.form-inline button i {
+  color: grey;
 }
