@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bxslider/dist/jquery.bxslider.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Codi-n-shop</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="slider sliderHead">
+        <div>
+          <img src="img/1stSlide-1.jpg" alt="toto">
+        </div>
+        <div>
+          <img src="img/31959565_2053047888300089_6408062291912163328_n.jpg" alt="toto">
+        </div>
+        <div>
+          <img src="img/31959565_2053047888300089_6408062291912163328_n.jpg" alt="toto">
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="row" id="header">
+        <!--Navigation bar-->
+        <div id="nav-placeholder" class="col-sm-12"></div>
+        <!--end of Navigation bar-->
+      </div>
+    </header>
+
+    <div class="row" id="main">
+      <div class="column d-none" id="filterMenu">
+      </div>
+      <div class="column col-12" id="menuArticle">
+        <div class="row">
+          <div class="column col-12">
+            <div class="row">
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+            </div>
+          </div>
+          <div class="column col-12">
+            <div class="row">
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+              <div class="column col-12 col-sm-6 col-lg-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col filter"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer>
+      <div class="row" id="footer">
+        <!--footer-->
+        <div id="footer-placeholder" class="col-sm-12"></div>
+        <!--end of footer-->
+      </div>
+    </footer>
+  </div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="node_modules/bxslider/dist/jquery.bxslider.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("nav.html");
+      $("#footer-placeholder").load("footer.html");
+    });
+  </script>
+</body>
+
+</html>

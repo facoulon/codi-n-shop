@@ -2,35 +2,40 @@
   width: 100%;
   overflow: hidden;
 }
-
-body div.container div.row div.bx-wrapper {
-  margin-bottom: 0px;
-}
 /* ======================================NAVBAR ============================== */
 #nav-top-codi {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
-
 #nav-top-codi .column{
   height: 6em;
   border: 1px solid black;
   background-color: gray;
 }
-
 #nav-top-codi .column#search-nav, #nav-top-codi .column#navbar-top {
   height: 3em;
 }
-
+/* ======================================NAVBAR ============================== */
 /* ====================================== MAIN =============================== */
 #main .column {
   min-height: 20em;
   border: 1px solid black;
   background-color: lightgrey;
 }
-
 /* ====================================== MAIN =============================== */
+/* ===================================== FOOTER ============================== */
 #footer-codi .column {
   min-height: 20em;
   border: 1px solid black;
   background-color: green;
+}
+footer {
+  margin-top: 1em;
+}
+/* ===================================== FOOTER ============================== */
+.filter {
+  position: fixed;
+  top: 50%;
+  height: 100px;
+  width: 100px;
+  background-color:blue;
 }
