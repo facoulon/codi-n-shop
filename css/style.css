@@ -32,6 +32,7 @@ footer {
   margin-top: 1em;
 }
 /* ===================================== FOOTER ============================== */
+/* ===================================== FILTER ============================== */
 .filter {
   position: fixed;
   display: inline-block;
@@ -40,8 +41,67 @@ footer {
   width: 3em;
   background-color: grey;
   border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%
+  border-bottom-right-radius: 50%;
+  z-index: 1;
+  transition: 1s;
 }
 .filter i {
   font-size: 3em;
+}
+#filterMenu {
+  transition: 1s;
+  position: absolute;
+  z-index: 2;
+  min-height: 0;
+}
+/* ===================================== FILTER ============================== */
+
+.articleVente {
+  padding: 1rem;
+  text-align: center;
+}
+.articleVente h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.articleVente img {
+  height: auto;
+  width: 13rem;
+  float: left;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  clear: both;
+}
+.articleVente .prix {
+  font-size: 3rem;
+  color: blue;
+  padding: 2rem;
+  display :block
+}
+.articleVente .ajoutPanier {
+ text-align: center;
+}
+.articleVente section {
+  margin: 2rem 0em;
+  text-align: center;
+  display:block;
+}
+.articleVente .cpt {
+width: 2em;
+}
+
+
+
+
+@media screen and (max-width:576px) {
+  .filter {
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width:984px) {
+  .articleVente img {
+    float: none;
+    padding-right: 0;
+  }
 }
