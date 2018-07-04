@@ -32,6 +32,7 @@ footer {
   margin-top: 1em;
 }
 /* ===================================== FOOTER ============================== */
+/* ===================================== FILTER ============================== */
 .filter {
   position: fixed;
   display: inline-block;
@@ -40,8 +41,17 @@ footer {
   width: 3em;
   background-color: grey;
   border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%
+  border-bottom-right-radius: 50%;
+  z-index: 1;
+  transition: 1s;
 }
 .filter i {
   font-size: 3em;
 }
+#filterMenu {
+  transition: 1s;
+  position: absolute;
+  z-index: 2;
+  min-height: 0;
+}
+/* ===================================== FILTER ============================== */
