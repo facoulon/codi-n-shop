@@ -1,3 +1,7 @@
 body {
   background-color: lightgrey;
 }
+.sliderHead img {
+  width: 100%;
+  overflow: hidden;
+}
