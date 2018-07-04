@@ -34,8 +34,14 @@ footer {
 /* ===================================== FOOTER ============================== */
 .filter {
   position: fixed;
+  display: inline-block;
   top: 50%;
-  height: 100px;
-  width: 100px;
-  background-color:blue;
+  left: 0;
+  width: 3em;
+  background-color: grey;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%
+}
+.filter i {
+  font-size: 3em;
 }
