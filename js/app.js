@@ -27,7 +27,7 @@ $(document).ready(function() {
       $("#filterMenu").css('left', '0');
       $("#filterMenu").css('position', 'relative');
       $("#menuArticle").attr('class', 'column col-12 col-sm-7 col-md-9');
-      $(".filter").attr('class', 'filter offset-6 offset-sm-5 offset-md-3');
+      $(".filter").attr('class', 'filter offset-11 offset-sm-5 offset-md-3');
       $(".filter i").css({
         'margin-left': '0.2em',
         'transform': 'rotate(180deg)'
