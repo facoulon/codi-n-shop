@@ -1,3 +1,14 @@
+/*================================== part right ==============================*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+div.row#nav-top-codi div.column#logo h1 {
+  font-family: 'Kaushan Script' !important;
+}
+
+#navbar-top nav a.navbar-brand {
+  font-family: 'Kaushan Script' !important;
+}
 
 div#header div#center div#search-nav {
   display: flex;
@@ -25,4 +36,23 @@ div#header div#center div#search-nav form.form-inline button {
 
 div#header div#center div#search-nav form.form-inline button i {
   color: grey;
+}
+
+div#cart div.row div.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div#cart button {
+  display: block;
+  width: 100%;
+  height: 50%;
+  background-color: grey;
+  border: 0px;
+  /* margin: 0 -15px 0 -15px; */
+}
+
+div#cart button:hover {
+  color: black;
 }
