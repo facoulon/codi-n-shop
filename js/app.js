@@ -49,14 +49,14 @@ $(document).ready(function() {
   });
 
   // ========================== MANAGE DATABASE ==================================
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < catalog.length; i++) {
     $("div#menuArticle div.row div.column.col-12#card-art div.row").append('<div class="column col-12 col-sm-6 col-lg-3 articleVente" id="produit-' + i + '">')
     var catalogProd = $("div.column.articleVente#produit-"+ i);
-    catalogProd.append("<h2>Trust Gaming GXT 105 Izza</h2>");
-    catalogProd.append('<img class="img-fluid" src="img/souristest.jpg" alt="">')
-    catalogProd.append('<span class="prix">90$</span>')
-    catalogProd.append('<span class="description">Taillée pour le jeu, et avec un dessus entièrement éclairé</span>')
-    catalogProd.append('<a href = "produit-' + i + '"></a>')
+    catalogProd.append("<h2>"+ catalog[i].name + "</h2>");
+    catalogProd.append('<img class="img-fluid" src="'+ catalog[i].thumb +'" alt="">')
+    catalogProd.append('<span class="prix">'+ catalog[i].price + '$</span>')
+    catalogProd.append('<span class="description">'+ catalog[i].description.substring(0,100) + '...</span>')
+    catalogProd.append('<a href = "produit-' + i + '" class ="btn btn-primary">Voir la fiche</a>')
     catalogProd.append('<section id="section-' + i + '">')
     var catalogSection = $("#section-" + i)
     catalogSection.append('<button type="button" name="button">+</button>')

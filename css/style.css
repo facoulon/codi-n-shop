@@ -81,6 +81,10 @@ footer {
 .articleVente .ajoutPanier {
  text-align: center;
 }
+.articleVente a {
+  margin-top: 1rem;
+}
+
 .articleVente section {
   margin: 2rem 0em;
   text-align: center;
