@@ -19,6 +19,7 @@ $(document).ready(function() {
     $(".sliderHead img").css('margin-top', marginTop);
   }, 300);
 
+// ===================================== BARRE LATERAL ============================
   var filterWidth = $("#filterMenu").width()
   $("#filterMenu").css('left', -filterWidth - 32);
 
@@ -47,6 +48,21 @@ $(document).ready(function() {
       });
     }
   });
+  var mainBot = $("#main").height()
+  // var filterPos = $('.filter').position();
+setInterval(function() {
+console.log($(window).scrollTop());
+console.log(mainBot );
+// var filterBot = $(window).scrollTop();
+  if ($(window).scrollTop() > mainBot ) {
+    $('.filter').hide
+  } else {
+    $('.filter').show
+  }
+  }, 300);
+// ===================================== BARRE LATERAL ============================
+
+
 
   // ========================== MANAGE DATABASE ==================================
   for (var i = 0; i < catalog.length; i++) {
@@ -69,6 +85,11 @@ $(document).ready(function() {
   var singleUrl = new URL(url);
   var productId = singleUrl.searchParams.get("produit");
   console.log(productId);
+
+  // var GET_PARAM = function(name) {
+  //     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+  // };
+
 
   var singleProd = $("#product-area");
 
