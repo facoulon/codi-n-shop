@@ -51,12 +51,12 @@ $(document).ready(function() {
   // ========================== MANAGE DATABASE ==================================
   for (var i = 0; i < catalog.length; i++) {
     $("div#menuArticle div.row div.column.col-12#card-art div.row").append('<div class="column col-12 col-sm-6 col-lg-3 articleVente" id="produit-' + i + '">')
-    var catalogProd = $("div.column.articleVente#produit-"+ i);
-    catalogProd.append("<h2>"+ catalog[i].name + "</h2>");
-    catalogProd.append('<img class="img-fluid" src="'+ catalog[i].thumb +'" alt="">')
-    catalogProd.append('<span class="prix">'+ catalog[i].price + '$</span>')
-    catalogProd.append('<span class="description">'+ catalog[i].description.substring(0,100) + '...</span>')
-    catalogProd.append('<a href = "produit-' + i + '" class ="btn btn-primary">Voir la fiche</a>')
+    var catalogProd = $("div.column.articleVente#produit-" + i);
+    catalogProd.append("<h2>" + catalog[i].name + "</h2>");
+    catalogProd.append('<img class="img-fluid" src="' + catalog[i].thumb + '" alt="">')
+    catalogProd.append('<span class="prix">' + catalog[i].price + '$</span>')
+    catalogProd.append('<span class="description">' + catalog[i].description.substring(0, 100) + '...</span>')
+    catalogProd.append('<a href = "single.html?produit=' + i + '" class ="btn btn-primary">Voir la fiche</a>')
     catalogProd.append('<section id="section-' + i + '">')
     var catalogSection = $("#section-" + i)
     catalogSection.append('<button type="button" name="button">+</button>')
@@ -65,10 +65,17 @@ $(document).ready(function() {
     catalogProd.append('<button class="ajoutPanier" type="button" name="button">Ajout au panier</button>')
   }
 
+  var url = document.URL;
+  var singleUrl = new URL(url);
+  var productId = singleUrl.searchParams.get("produit");
+  console.log(productId);
 
+  var singleProd = $("#product-area");
 
-
-
-
+  $("#product-area img").attr('src', catalog[productId].pictures[0])
+  $("#product-area h1").text(catalog[productId].name)
+  $("#product-area span.title").text(catalog[productId].price+'$')
+  $("#product-area div.presentation.content").text(catalog[productId].description)
+  $("#product-area div.presentation span.quantity").text('Quantité disponibles: '+catalog[productId].quantity)
 
 })
