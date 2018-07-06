@@ -19,7 +19,7 @@ $(document).ready(function() {
     $(".sliderHead img").css('margin-top', marginTop);
   }, 300);
 
-// ===================================== BARRE LATERAL ============================
+  // ===================================== BARRE LATERAL ============================
   var filterWidth = $("#filterMenu").width()
   $("#filterMenu").css('left', -filterWidth - 32);
 
@@ -48,19 +48,20 @@ $(document).ready(function() {
       });
     }
   });
+
   var mainBot = $("#main").height()
   // var filterPos = $('.filter').position();
-setInterval(function() {
-console.log($(window).scrollTop());
-console.log(mainBot );
-// var filterBot = $(window).scrollTop();
-  if ($(window).scrollTop() > mainBot ) {
-    $('.filter').hide
-  } else {
-    $('.filter').show
-  }
+  setInterval(function() {
+    // console.log($(window).scrollTop());
+    // console.log(mainBot );
+    // var filterBot = $(window).scrollTop();
+    if ($(window).scrollTop() > mainBot) {
+      $('.filter').hide
+    } else {
+      $('.filter').show
+    }
   }, 300);
-// ===================================== BARRE LATERAL ============================
+  // ===================================== BARRE LATERAL ============================
 
 
 
@@ -80,23 +81,79 @@ console.log(mainBot );
     catalogSection.append('<button type="button" name="button">-</button>')
     catalogProd.append('<button class="ajoutPanier" type="button" name="button">Ajout au panier</button>')
   }
+  var panier =["init"];
+sessionStorage.setItem('panier', JSON.stringify(panier))
+
+
+  $('.ajoutPanier').click(function(event) {
+    var checkPanier = sessionStorage.getItem('panier')
+    checkPanier = JSON.parse(checkPanier)
+    var parentDiv = $(this).parent("div");
+    var idParent = parentDiv.attr('id');
+    var idProduit = idParent.substring(8)
+    var produit = {
+   "NumProduit" : idProduit,
+   "Quantity" : 1
+    }
+for (var i = 0; i < checkPanier.length; i++) {
+  if (checkPanier[i].NumProduit == idProduit){
+    console.log(checkPanier[i].NumProduit);
+    console.log(checkPanier[i].Quantity);
+  checkPanier[i].Quantity++
+    console.log(checkPanier[i].Quantity);
+} else {
+  panier.push(produit)
+}
+
+}
+console.log(checkPanier);
+
+
+
+    sessionStorage.setItem('panier', JSON.stringify(panier))
+  });
+
+
+  for (var item in sessionStorage) {
+    // console.log(sessionStorage)
+    var idItem = item.substring(8)
+    // console.log(idItem);
+    $("#cart-area").append(
+      '<div class="row cart-item">\
+        <div class="col">\
+          <img src="img/chrono4.png" alt="">\
+        </div>\
+        <div class="col" class="cart-description">\
+          <h2>Petit Lapin Vert Olive</h2>\
+          <span>123 €</span>\
+        </div>\
+        <div class="col">\
+          Quantité: 23\
+        </div>\
+        <div class="col">\
+          prix: 2829 €\
+        </div>\
+      </div>'
+    )
+  }
+
+
+
 
   var url = document.URL;
   var singleUrl = new URL(url);
   var productId = singleUrl.searchParams.get("produit");
-  console.log(productId);
 
   // var GET_PARAM = function(name) {
   //     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
   // };
 
-
   var singleProd = $("#product-area");
 
-  $("#product-area img").attr('src', catalog[productId].pictures[0])
-  $("#product-area h1").text(catalog[productId].name)
-  $("#product-area span.title").text(catalog[productId].price+'$')
-  $("#product-area div.presentation.content").text(catalog[productId].description)
-  $("#product-area div.presentation span.quantity").text('Quantité disponibles: '+catalog[productId].quantity)
+  // $("#product-area img").attr('src', catalog[productId].pictures[0])
+  // $("#product-area h1").text(catalog[productId].name)
+  // $("#product-area span.title").text(catalog[productId].price + '$')
+  // $("#product-area div.presentation.content").text(catalog[productId].description)
+  // $("#product-area div.presentation span.quantity").text('Quantité disponibles: ' + catalog[productId].quantity)
 
 })
