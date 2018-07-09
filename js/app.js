@@ -18,20 +18,26 @@ $(document).ready(function() {
     marginTop += 'px';
     $(".sliderHead img").css('margin-top', marginTop);
   }, 300);
-
-
-
-
   // ========================== MANAGE DATABASE ==================================
 
+var xcpt = 1;
+  var cptVal = 1;
 
+  $(".cptPos").click(function(event) {
+    var parentDivCpt= $(this).parent("section");
+    var idParentCpt = parentDivCpt.attr('id');
+    var z = idParentCpt.substring(8)
+    cptVal++
+    $("#" + idParentCpt + " .cpt").val(cptVal)
+  });
+  $(".cptNeg").click(function(event) {
+    var parentDivCpt= $(this).parent("section");
+    var idParentCpt = parentDivCpt.attr('id');
+    var z = idParentCpt.substring(8)
+    if ($("#" + idParentCpt + " .cpt").val() > 0) {
+      cptVal--
+      $("#" + idParentCpt + " .cpt").val(cptVal)
+    }
+   });
 
-
-
-  
-
-
-
-
-
-})
+});

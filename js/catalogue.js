@@ -9,13 +9,20 @@ $(document).ready(function(){
     catalogProd.append('<a href = "single.html?produit=' + i + '" class ="btn btn-primary">Voir la fiche</a>')
     catalogProd.append('<section id="section-' + i + '">')
     var catalogSection = $("#section-" + i)
-    catalogSection.append('<button type="button" name="button">+</button>')
-    catalogSection.append('<input class="cpt" type="text" name="" value="">')
-    catalogSection.append('<button type="button" name="button">-</button>')
+    catalogSection.append('<button class="cptPos" type="button" name="button">+</button>')
+    catalogSection.append('<input class="cpt" type="text" name="" value="1">')
+    catalogSection.append('<button class="cptNeg" type="button" name="button">-</button>')
     catalogProd.append('<button class="ajoutPanier" type="button" name="button">Ajout au panier</button>')
   }
   var panier = [];
   sessionStorage.setItem('panier', JSON.stringify(panier))
+
+
+
+
+
+
+
 
   // ===================================== BARRE LATERAL ============================
   var filterWidth = $("#filterMenu").width()
