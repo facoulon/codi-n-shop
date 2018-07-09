@@ -7,7 +7,7 @@ $(document).ready(function(){
   // };
 
   var singleProd = $("#product-area");
-
+  $("#product-area .single-product-container").attr("id", "produit-"+productId);
   $("#product-area img").attr('src', catalog[productId].pictures[0])
   $("#product-area h1").text(catalog[productId].name)
   $("#product-area span.title").text(catalog[productId].price + '$')

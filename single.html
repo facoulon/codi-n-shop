@@ -40,10 +40,10 @@
     <main>
       <div class="row" id="product-area">
         <div class="column col-sm-6">
-          <p>Categorie  >  Sous-catégorie</p>
+          <p>Categorie > Sous-catégorie</p>
           <img alt="">
         </div>
-        <div class="column col-sm-6">
+        <div class="single-product-container column col-sm-6">
           <h1></h1>
           <div class="presentation">
             <span class="discount">Prix</span>
@@ -54,10 +54,8 @@
           <button type="button" name="button">+</button>
           <input class="cpt" type="text" name="" value="">
           <button type="button" name="button">-</button>
-          <div class="presentation">
-            <span class="quantity"></span>
-            <button type="button" name="button">Ajouter au panier</button>
-          </div>
+          <span class="quantity"></span>
+          <button class="ajoutPanier" type="button" name="button">Ajouter au panier</button>
         </div>
       </div>
     </main>
@@ -75,6 +73,7 @@
   <script src="node_modules/bxslider/dist/jquery.bxslider.min.js"></script>
   <script src="js/catalog_x100.js"></script>
   <script src="js/single.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/app.js"></script>
   <script>
     $(function() {
