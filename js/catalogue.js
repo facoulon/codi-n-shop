@@ -9,15 +9,15 @@ $(document).ready(function(){
     catalogProd.append('<a href = "single.html?produit=' + i + '" class ="btn btn-primary">Voir la fiche</a>')
     catalogProd.append('<section id="section-' + i + '">')
     var catalogSection = $("#section-" + i)
-    catalogSection.append('<button class="cptPos" type="button" name="button">+</button>')
+    catalogSection.append('<button class="cptPos" type="button" name="button" value="'+i+'">+</button>')
     catalogSection.append('<input class="cpt" type="text" name="" value="1">')
-    catalogSection.append('<button class="cptNeg" type="button" name="button">-</button>')
-    catalogProd.append('<button class="ajoutPanier" type="button" name="button">Ajout au panier</button>')
+    catalogSection.append('<button class="cptNeg" type="button" name="button" value="'+i+'">-</button>')
+    catalogProd.append('<button class="ajoutPanier" type="button" name="button" value="'+i+'">Ajout au panier</button>')
   }
-  $("#createPanier").click(function(event) {
-    var panier = [];
-    sessionStorage.setItem('panier', JSON.stringify(panier))
-  });
+  // $("#createPanier").click(function(event) {
+  //   var panier = [];
+  //   sessionStorage.setItem('panier', JSON.stringify(panier))
+  // });
 
 
 
@@ -44,7 +44,6 @@ $(document).ready(function(){
       var filterWidth = $("#filterMenu").width()
       $("#filterMenu").css('left', -filterWidth - 32);
       var filterHeight = $("#menuArticle").height();
-      console.log(filterHeight);
       $("#filterMenu").css('height', filterHeight + 'px');
       $("#filterMenu").css('position', 'absolute');
       $("#menuArticle").attr('class', 'column col-12');
@@ -56,18 +55,6 @@ $(document).ready(function(){
     }
   });
 
-  var mainBot = $("#main").height()
-  // var filterPos = $('.filter').position();
-  setInterval(function() {
-    // console.log($(window).scrollTop());
-    // console.log(mainBot );
-    // var filterBot = $(window).scrollTop();
-    if ($(window).scrollTop() > mainBot) {
-      $('.filter').hide
-    } else {
-      $('.filter').show
-    }
-  }, 300);
   // ===================================== BARRE LATERAL ============================
 
 

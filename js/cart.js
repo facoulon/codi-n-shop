@@ -1,113 +1,81 @@
-$(document).ready(function(){
-  $('.ajoutPanier').click(function(event) {
-    var checkPanier = sessionStorage.getItem('panier')
-    checkPanier = JSON.parse(checkPanier)
-    var parentDiv = $(this).parent("div");
-    var idParent = parentDiv.attr('id');
-    var idProduit = idParent.substring(8)
-    var produit = {
-      "NumProduit": idProduit,
-      "Quantity": 1
-    }
+$(document).ready(function() {
+  loadCart();
+  displayCart();
 
-    if (checkPanier.length == 0) {
-      checkPanier.push(produit)
+  $(".ajoutPanier").click(function() {
+    var productId = $(this).val();
+    if (cart[productId]) {
+      cart[productId]++;
     } else {
-      var index = cherche(checkPanier, idProduit);
-      if (index != null) {
-        checkPanier[index].Quantity++;
-      } else {
-        checkPanier.push(produit)
-      }
+      cart[productId]=1;
     }
-    console.log(checkPanier);
+    saveCart();
+    displayCart();
+  })
 
+  var cart = {}
 
-    sessionStorage.setItem('panier', JSON.stringify(checkPanier))
-  });
-
-  function cherche(checkPanier, myID) {
-    for (var i = 0; i < checkPanier.length; i++) {
-      if (myID == checkPanier[i].NumProduit) {
-        return i;
-      }
-    }
-    return null;
+  function saveCart() {
+    var cart_json = JSON.stringify(cart);
+    sessionStorage.setItem("cart", cart_json);
   }
 
-  var displayPanier = sessionStorage.getItem('panier')
-  displayPanier = JSON.parse(displayPanier)
-  console.log(displayPanier);
+  function loadCart() {
+    var cart_json = sessionStorage.getItem("cart");
+    cart = JSON.parse(cart_json) || {};
+  }
 
-  var total = 0;
-  for (var i = 0; i < displayPanier.length; i++) {
-    nProd = displayPanier[i].NumProduit;
-    console.log(nProd);
+
+  function displayCart() {
+    $("#cart-area").html("");
+    var total = 0;
+    for (productId in cart) {
+      if (cart[productId] > 0) {
+        $("#cart-area").append(
+          '<div class="row cart-item">\
+          <div class="col">\
+          <img src="'+catalog[productId].thumb+'" alt="">\
+          </div>\
+          <div class="col" class="cart-description">\
+          <h2>'+catalog[productId].name+'</h2>\
+          <span>'+catalog[productId].price+' €</span>\
+          </div>\
+          <div class="col">\
+          <button class="cptPos" type="button" name="button" value="'+productId+'">+</button>\
+          Quantité: \
+          <span id="'+productId+'">'+cart[productId]+'</span>\
+          <button class="cptNeg" type="button" name="button" value="'+productId+'">-</button>\
+          </div>\
+          <div class="col">\
+          prix: '+cart[productId]*catalog[productId].price+' €\
+          </div>\
+          </div>'
+        )
+      }
+      // var totalProd = cart[productId]*catalog[productId].price;
+      total += cart[productId]*catalog[productId].price;
+    }
     $("#cart-area").append(
-      '<div class="row cart-item">\
-        <div class="col">\
-          <img src="'+ catalog[nProd].thumb +'" alt="">\
-        </div>\
-        <div class="col" class="cart-description">\
-          <h2>'+ catalog[nProd].name +'</h2>\
-          <span>'+ catalog[nProd].price +' €</span>\
-        </div>\
-        <div class="col">\
-        Quantity : <button class="cptPosCart" type="button" name="button">+</button> <a href="#" id="username" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">'+ displayPanier[i].Quantity +'</a>\
-        <button class="cptNegCart" type="button" name="button">-</button>\
-        </div>\
-        <div class="col">\
-          prix: '+ catalog[nProd].price*displayPanier[i].Quantity +' €\
-        </div>\
-      </div>'
+      '<div class="col offset-9">Total: '+total+'$</div>'
     )
-    total += catalog[nProd].price*displayPanier[i].Quantity;
-    console.log(total);
+
+    $(".cptPos").click(function() {
+      loadCart();
+      productId = $(this).val();
+      cart[productId]++;
+      saveCart();
+      displayCart();
+    })
+    $(".cptNeg").click(function() {
+      loadCart();
+      productId = $(this).val();
+      if (cart[productId] > 0) {
+        cart[productId]--;
+        saveCart();
+        displayCart();
+      }
+    })
   }
-  $("#cart-area").append(
-    '<div class="row">\
-      <div class="col offset-9">total: '+ total +' €</div>\
-    </div>'
-  )
-  // turn to inline mode
-  $.fn.editable.defaults.mode = 'inline';
-    $('#username').editable({
-    type: 'text',
-    pk: 1,
-    url: '/post',
-    title: 'Enter username'
+
+
 });
-
-var cptVal = 1;
-
-  // $(".cptPos").click(function(event) {
-  //   var parentDivCpt= $(this).parent("section");
-  //   var idParentCpt = parentDivCpt.attr('id');
-  //   var z = idParentCpt.substring(8)
-  //   cptVal++
-  //   $("#" + idParentCpt + " .cpt").val(cptVal)
-  // });
-  // $(".cptNeg").click(function(event) {
-  //   var parentDivCpt= $(this).parent("section");
-  //   var idParentCpt = parentDivCpt.attr('id');
-  //   var z = idParentCpt.substring(8)
-  //   if ($("#" + idParentCpt + " .cpt").val() > 0) {
-  //     cptVal--
-  //     $("#" + idParentCpt + " .cpt").val(cptVal)
-  //   }
-
-  $(".cptPosCart").click(function(event) {
-    var parentDivCpt= $(this).parent("div");
-    var h2Div = parentDivCpt.prev("div")
-    // var Nproduct = $(h2Div "h2")
-    var product =h2Div.children('h2').text();
-    var Nproduct = product.substr(product.indexOf(" ") + 1)
-    displayPanier[Nproduct].Quantity++
-    $(this).next().text(displayPanier[Nproduct].Quantity)
-   });
-
-
-
-
-
-})
