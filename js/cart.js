@@ -53,7 +53,8 @@ $(document).ready(function(){
           <span>'+ catalog[nProd].price +' €</span>\
         </div>\
         <div class="col">\
-          Quantité: '+ displayPanier[i].Quantity +'\
+        Quantity : <button class="cptPosCart" type="button" name="button">+</button> <a href="#" id="username" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">'+ displayPanier[i].Quantity +'</a>\
+        <button class="cptNegCart" type="button" name="button">-</button>\
         </div>\
         <div class="col">\
           prix: '+ catalog[nProd].price*displayPanier[i].Quantity +' €\
@@ -68,4 +69,45 @@ $(document).ready(function(){
       <div class="col offset-9">total: '+ total +' €</div>\
     </div>'
   )
+  // turn to inline mode
+  $.fn.editable.defaults.mode = 'inline';
+    $('#username').editable({
+    type: 'text',
+    pk: 1,
+    url: '/post',
+    title: 'Enter username'
+});
+
+var cptVal = 1;
+
+  // $(".cptPos").click(function(event) {
+  //   var parentDivCpt= $(this).parent("section");
+  //   var idParentCpt = parentDivCpt.attr('id');
+  //   var z = idParentCpt.substring(8)
+  //   cptVal++
+  //   $("#" + idParentCpt + " .cpt").val(cptVal)
+  // });
+  // $(".cptNeg").click(function(event) {
+  //   var parentDivCpt= $(this).parent("section");
+  //   var idParentCpt = parentDivCpt.attr('id');
+  //   var z = idParentCpt.substring(8)
+  //   if ($("#" + idParentCpt + " .cpt").val() > 0) {
+  //     cptVal--
+  //     $("#" + idParentCpt + " .cpt").val(cptVal)
+  //   }
+
+  $(".cptPosCart").click(function(event) {
+    var parentDivCpt= $(this).parent("div");
+    var h2Div = parentDivCpt.prev("div")
+    // var Nproduct = $(h2Div "h2")
+    var product =h2Div.children('h2').text();
+    var Nproduct = product.substr(product.indexOf(" ") + 1)
+    displayPanier[Nproduct].Quantity++
+    $(this).next().text(displayPanier[Nproduct].Quantity)
+   });
+
+
+
+
+
 })

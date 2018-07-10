@@ -14,8 +14,10 @@ $(document).ready(function(){
     catalogSection.append('<button class="cptNeg" type="button" name="button">-</button>')
     catalogProd.append('<button class="ajoutPanier" type="button" name="button">Ajout au panier</button>')
   }
-  var panier = [];
-  sessionStorage.setItem('panier', JSON.stringify(panier))
+  $("#createPanier").click(function(event) {
+    var panier = [];
+    sessionStorage.setItem('panier', JSON.stringify(panier))
+  });
 
 
 

@@ -20,8 +20,7 @@ $(document).ready(function() {
   }, 300);
   // ========================== MANAGE DATABASE ==================================
 
-var xcpt = 1;
-  var cptVal = 1;
+var cptVal = 1;
 
   $(".cptPos").click(function(event) {
     var parentDivCpt= $(this).parent("section");
