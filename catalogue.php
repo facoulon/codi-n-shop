@@ -101,7 +101,9 @@
     )
     });
   </script>
-  <?php endforeach; ?>
+  <?php endforeach;
+        $dbh = null;
+  ?>
 
 
   <script>

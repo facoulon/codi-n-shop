@@ -1,3 +1,5 @@
 /node_modules
 /share
 package-lock.json
+access.log
+error.log
