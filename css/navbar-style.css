@@ -50,10 +50,18 @@ div.row#nav-top-codi div.column#logo h1:hover {
   color: white;
 }
 
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+.titreCodi {
+    color: white !important;
+}
 
-#navbar-top nav a.navbar-brand {
+#navbar-top nav a.navbar-brand, #navbar-top nav a{
   font-family: 'Kaushan Script' !important;
   display: block;
+  text-decoration: none;
 }
 
 div#header div#center div#search-nav {

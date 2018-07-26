@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
   <div class="container-fluid">
     <div class="row">
       <div class="slider sliderHead">
@@ -63,13 +64,6 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
     <footer>
       <div class="row" id="footer">
         <!--footer-->
@@ -86,6 +80,30 @@
   <script src="js/catalogue.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/app.js"></script>
+
+
+  <?php
+  $dbh = new PDO('mysql:host=localhost;dbname=BoutiqueEnLigne', 'admin', 'plop');
+  foreach($dbh->query('SELECT * from Produit') as $row) : ?>
+  <?php echo $row[0] ?>
+  <script>
+  jQuery(document).ready(function($) {
+    $("div#menuArticle div.row div.column.col-12#card-art div.row").append(
+    `
+        <div class="column col-12 col-sm-6 col-lg-3 articleVente" id="<?php echo $row[0] ?>">
+        <h2><?php echo $row[1]?></h2>
+        <img class="img-fluid" src="<?php echo $row[5] ?>" alt="">
+        <span class="prix"><?php echo $row[3] ?>$</span>
+        <span class="description"><?php echo substr($row[2], 0 , 100).'...' ?></span>
+        <a href = "single.html?produit=<?php echo $row[0] ?>" class ="btn btn-primary">Voir la fiche</a>
+        <button class="ajoutPanier" style="display:block;width:100%;margin-top:1rem;" type="button" name="button" value="<?php echo $row[0] ?>">Ajout au panier</button>
+    `
+    )
+    });
+  </script>
+  <?php endforeach; ?>
+
+
   <script>
     $(function() {
       $("#nav-placeholder").load("nav.html");
