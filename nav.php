@@ -1,7 +1,7 @@
 <div class="row" id="nav-top-codi">
 
   <div class="column d-none d-lg-block col-lg-3" id="logo">
-    <h1><a class="titreCodi" href="#
+    <h1><a class="titreCodi" href="
       index.php">còdi n shop</a>
     </h1>
   </div>
@@ -30,7 +30,7 @@
                 <a class="nav-link" href="catalogue.php">Catalogue</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cart.html">Panier</a>
+                <a class="nav-link" href="cart.php">Panier</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
