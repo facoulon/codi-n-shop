@@ -47,7 +47,7 @@
           <h1></h1>
           <div class="presentation">
             <span class="discount">Prix</span>
-            <span class="title">123$</span>
+            <!-- <span class="title">123$</span> -->
           </div>
           <div class="presentation content">
           </div>

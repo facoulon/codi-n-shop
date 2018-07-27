@@ -46,3 +46,4 @@
 [Thu Jul 26 16:06:41.556180 2018] [php7:emerg] [pid 12584] [client 127.0.0.1:35622] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/fabien/Code/codi-n-shop-php/catalogue.php on line 97
 [Thu Jul 26 16:06:50.271943 2018] [php7:emerg] [pid 12204] [client 127.0.0.1:35624] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/fabien/Code/codi-n-shop-php/catalogue.php on line 97
 [Fri Jul 27 09:26:17.689159 2018] [php7:emerg] [pid 4610] [client 127.0.0.1:40680] PHP Parse error:  syntax error, unexpected '<' in /home/fabien/Code/codi-n-shop-php/catalogue.php on line 54
+[Fri Jul 27 09:54:46.585169 2018] [php7:error] [pid 4954] [client 127.0.0.1:41018] script '/home/fabien/Code/codi-n-shop-php/single.php' not found or unable to stat, referer: http://ma-boutique-php/catalogue.php

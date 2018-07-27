@@ -57,7 +57,7 @@
                 <img class="img-fluid" src="<?php echo $row[5] ?>" alt="">
                 <span class="prix"><?php echo $row[3] ?>$</span>
                 <span class="description"><?php echo substr($row[2], 0 , 100).'...' ?></span>
-                <a href = "single.html?produit=<?php echo $row[0] ?>" class ="btn btn-primary">Voir la fiche</a>
+                <a href = "single.php?produit=<?php echo $row[0] ?>" class ="btn btn-primary">Voir la fiche</a>
                 <button class="ajoutPanier" style="display:block;width:100%;margin-top:1rem;" type="button" name="button" value="<?php echo $row[0] ?>">Ajout au panier</button>
               </div>
               <?php endforeach;
