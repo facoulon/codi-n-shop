@@ -37,28 +37,45 @@
         <!--end of Navigation bar-->
       </div>
     </header>
+
     <main>
+        <?php
+
+        $bdd = new PDO('mysql:host=localhost;dbname=BoutiqueEnLigne', 'admin', 'plop');
+        $reponse = $bdd->query("SELECT * FROM Produit");
+        $productID = $_GET["produit"];
+        $product = $reponse->fetch();
+
+        // print_r( $product);
+
+        // $reponse = "SELECT * FROM Produit WHERE id = '1'";
+        // echo $reponse;
+        ?>
       <div class="row" id="product-area">
         <div class="column col-sm-6">
           <p>Categorie > Sous-catégorie</p>
-          <img alt="">
+        <img src="<?php echo $product[thumb]?>" alt="">
         </div>
         <div class="single-product-container column col-sm-6">
-          <h1></h1>
+
+          <h1><?php echo $product[name]?></h1>
           <div class="presentation">
             <span class="discount">Prix</span>
-            <!-- <span class="title">123$</span> -->
+            <span class="title"><?php echo $product[price]?>$</span>
           </div>
           <div class="presentation content">
+              <p><?php echo $product[description]?></p>
+              <span class="quantity"> Quantité disponible:<?php echo $product[quantity]?></span>
           </div>
           <button type="button" name="button">+</button>
           <input class="cpt" type="text" name="" value="">
           <button type="button" name="button">-</button>
-          <span class="quantity"></span>
           <button class="ajoutPanier" type="button" name="button">Ajouter au panier</button>
         </div>
       </div>
     </main>
+
+
     <footer>
       <div class="row" id="footer">
         <!--footer-->
