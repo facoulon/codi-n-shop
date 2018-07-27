@@ -42,8 +42,8 @@
         <?php
 
         $bdd = new PDO('mysql:host=localhost;dbname=BoutiqueEnLigne', 'admin', 'plop');
-        $reponse = $bdd->query("SELECT * FROM Produit");
         $productID = $_GET["produit"];
+        $reponse = $bdd->query("SELECT * FROM Produit WHERE id=$productID");
         $product = $reponse->fetch();
 
         // print_r( $product);
