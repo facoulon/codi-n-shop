@@ -1,12 +1,12 @@
 $(document).ready(function(){
-$('.ajoutPanier').click(function(event) {
-  var idProduct = $(this).parent().attr('id');
-
-  $.post("ajout.php", {productID: idProduct}, function(result){
-          console.log(status);
-    });
-
-});
+// $('.ajoutPanier').click(function(event) {
+//   var idProduct = $(this).parent().attr('id');
+//
+//   $.post("ajout.php", {productID: idProduct}, function(result){
+//           console.log(status);
+//     });
+//
+// });
 
 
 
