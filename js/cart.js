@@ -25,7 +25,12 @@ $(document).ready(function() {
     cart = JSON.parse(cart_json) || {};
   }
 
-  //
+
+  // $('.cptNeg').click(function(event) {
+  //   $(this).
+  // });
+
+
   // function displayCart() {
   //   $("#cart-area").html("");
   //   var total = 0;

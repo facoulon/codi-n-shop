@@ -37,6 +37,7 @@
               $dbh = new PDO('mysql:host=localhost;dbname=BoutiqueEnLigne', 'admin', 'plop');
               foreach($dbh->query('SELECT * from Produit') as $row) : ?>
               <div class="column col-12 col-sm-6 col-lg-3 articleVente" id="<?php echo $row[0] ?>">
+
               <h2><?php echo $row[1]?></h2>
                 <img class="img-fluid" src="<?php echo $row[5] ?>" alt="">
                 <span class="prix"><?php echo $row[3] ?>$</span>

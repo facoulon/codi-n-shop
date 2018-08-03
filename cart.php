@@ -24,21 +24,34 @@
     </header>
     <main>
       <section id="cart-area">
-        <!-- <div class="row cart-item">
-          <div class="col">
-            <img src="img/chrono4.png" alt="">
-          </div>
-          <div class="col" class="cart-description">
-            <h2>Petit Lapin Vert Olive</h2>
-            <span>123 €</span>
-          </div>
-          <div class="col">
-            Quantité: 23
-          </div>
-          <div class="col">
-            prix: 2829 €
-          </div>
-        </div> -->
+
+        <?php
+        $total = 0;
+        $dbh = new PDO('mysql:host=localhost;dbname=BoutiqueEnLigne', 'admin', 'plop');
+        foreach($dbh->query('SELECT * from Ligne WHERE ID_Commande=1' ) as $row) : $Produit = $dbh->query('SELECT * from Produit WHERE id='.$row["ID_Produit"])->fetch()?>
+        <div class="row cart-item">
+        <div class="col">
+        <img src="<?php echo $Produit['thumb'] ?>" alt="Image.<?php echo $Produit['name'] ?>">
+           </div>
+           <div class="col" class="cart-description">
+           <h2><?php echo $Produit['name'] ?></h2>
+           <span><?php echo $Produit['price'] ?> €</span>
+           </div>
+           <div class="col">
+           <button class="cptPos" type="button" name="button" value="<?php echo $row['Quantity'] ?>">+</button>
+           Quantité:
+           <span id="<?php echo $Produit['id'] ?>"><?php echo $row['Quantity'] ?></span>
+           <button class="cptNeg" type="button" name="button" value="<?php echo $row['Quantity'] ?>">-</button>
+           </div>
+           <div class="col">
+           prix: <?php echo $Produit['price']*$row['Quantity']?> €
+           </div>
+         </div>
+         <?php $total +=$Produit['price']*$row['Quantity'] ?>
+        <?php endforeach;
+        $dbh = null;
+        ?>
+        <div class="col offset-9">Total: <?php echo $total?>$</div> 
       </section>
     </main>
     <footer>
